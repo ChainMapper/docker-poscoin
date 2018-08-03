@@ -2,17 +2,15 @@
 Wallet and daemon for Pos Coin [POS] cryptocurrency on docker
 
 # Quickstart
-Type `docker run -it joshendriks/poscoin` and see the wallet starting.
+Type `docker run -it -e "USER=me" -e "PASSWORD=secret" -e "RPCALLOW=127.0.0.1" chainmapper/poscoin` and see the wallet starting.
+
+Alternatively type `docker run -it -v "<path_to_config>:/config/PayCon.conf" chainmapper/poscoin` to use your own config.
 
 ```
-Docker Pos Coin wallet
+Docker POS wallet
 
-By: Jos Hendriks
-GitHub: https://github.com/joshendriks/
-Docker: https://hub.docker.com/r/joshendriks/
-
-BTC: 1NCZgpMMoNwL6ZeFsEQ2kRZEzzzTd5TuGk
-POS: PM9E991KfrMZBp976JVFVFax4zs88vVGYp
+By: ChainMapper
+Website: https://chainmapper.com
 
 Starting POS daemon...
 ```
@@ -20,12 +18,7 @@ Starting POS daemon...
 # Proper start
 Use a volume to store all data. The image stores it's data in `/data`. So mapping that volume will do the trick.
 
-Additionally you can override the config and wallet file using volumes pointing to `/config/poscoin.conf` and `/config/wallet.data`
-
-# Donations:
-BTC: 1NCZgpMMoNwL6ZeFsEQ2kRZEzzzTd5TuGk
-
-POS: PM9E991KfrMZBp976JVFVFax4zs88vVGYp
+Additionally you can override the config and wallet file using volumes pointing to `/config/pos.conf` and `/config/wallet.data`
 
 # License
 MIT, see LICENSE file
