@@ -1,7 +1,7 @@
 FROM chainmapper/walletbase-xenial-build as builder
 
 ENV GIT_COIN_URL    https://github.com/posdevv/pos.git
-ENV GIT_COIN_NAME   pos   
+ENV GIT_COIN_NAME   pos
 
 RUN git clone $GIT_COIN_URL $GIT_COIN_NAME \
 	&& cd $GIT_COIN_NAME \
@@ -23,9 +23,9 @@ RUN mkdir /data
 ENV HOME /data
 
 #rpc port & main port
-EXPOSE 8332 8333
+EXPOSE 6666 8333
 
 COPY start.sh /start.sh
 COPY gen_config.sh /gen_config.sh
-RUN chmod 777 /*.sh
+RUN chmod +x /*.sh
 CMD /start.sh pos.conf POS posd
